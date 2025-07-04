@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const Login = () => {
+const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
@@ -79,7 +79,7 @@ const Login = () => {
               required
               variant="outlined"
             />
-            <FormControl fullWidth margin="normal" required>
+            {/* <FormControl fullWidth margin="normal" required>
               <InputLabel>Role</InputLabel>
               <Select
                 value={role}
@@ -89,7 +89,7 @@ const Login = () => {
                 <MenuItem value="recruiter">Recruiter</MenuItem>
                 <MenuItem value="jobseeker">Job Seeker</MenuItem>
               </Select>
-            </FormControl>
+            </FormControl> */}
 
             <Button
               type="submit"
@@ -108,4 +108,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
