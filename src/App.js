@@ -15,11 +15,9 @@ function AppContent() {
   const location = useLocation();
   const hideNavbarRoutes = ['/services']; // Add more routes if needed
 
-  const showNavbar = !hideNavbarRoutes.includes(location.pathname);
-
   return (
     <>
-      {showNavbar && <Navbar />}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recruiter" element={<RecruiterDashboard />} />

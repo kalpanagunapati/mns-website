@@ -10,6 +10,8 @@ import {
   TextField
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer/Footer';
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -22,8 +24,8 @@ export default function Home() {
   };
 
   return (
-    <Box sx={{ backgroundColor: '#C0C0C0', minHeight: '100vh', py: 4 }}>
-      <Container maxWidth="lg">
+    <Box sx={{ backgroundColor: '#C0C0C0', marginTop: '10px'}}>
+      <Container>
         {/* Hero Section */}
         <Paper elevation={4} sx={{ padding: 4 }}>
           <Typography variant="h4" color="primary" align="center" gutterBottom>
@@ -104,6 +106,7 @@ export default function Home() {
           </Grid>
         </Box>
       </Container>
+      <Footer/>
     </Box>
   );
 }
