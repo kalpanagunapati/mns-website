@@ -4,9 +4,13 @@ import {
   Button,
   TextField,
   FormGroup,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
   FormControlLabel,
   Checkbox,
   Typography,
+  Grid,
 } from "@mui/material";
 
 const JobPostForm = ({ onJobPost }) => {
@@ -14,7 +18,11 @@ const JobPostForm = ({ onJobPost }) => {
   const [description, setDescription] = useState("");
   const [jobTypes, setJobTypes] = useState([]);
   const [location, setLocation] = useState("");
-  const [salary, setSalary] = useState("");
+  const [salaryMin, setSalaryMin] = useState("");
+  const [salaryMax, setSalaryMax] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleCheckboxChange = (event) => {
     const value = event.target.name;
@@ -34,7 +42,15 @@ const JobPostForm = ({ onJobPost }) => {
       description,
       jobTypes,
       location,
-      expectedSalary: salary,
+      salaryRange: {
+        min: salaryMin,
+        max: salaryMax,
+      },
+      recruiter: {
+        email,
+        password,
+        phone,
+      },
     };
 
     onJobPost(newJob);
@@ -44,7 +60,11 @@ const JobPostForm = ({ onJobPost }) => {
     setDescription("");
     setJobTypes([]);
     setLocation("");
-    setSalary("");
+    setSalaryMin("");
+    setSalaryMax("");
+    setEmail("");
+    setPassword("");
+    setPhone("");
   };
 
   return (
@@ -57,6 +77,7 @@ const JobPostForm = ({ onJobPost }) => {
         margin="normal"
         required
       />
+
       <TextField
         label="Description"
         value={description}
@@ -72,36 +93,19 @@ const JobPostForm = ({ onJobPost }) => {
         Job Type:
       </Typography>
       <FormGroup row>
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={jobTypes.includes("Full-Time")}
-              onChange={handleCheckboxChange}
-              name="Full-Time"
-            />
-          }
-          label="Full-Time"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={jobTypes.includes("Part-Time")}
-              onChange={handleCheckboxChange}
-              name="Part-Time"
-            />
-          }
-          label="Part-Time"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={jobTypes.includes("Internship")}
-              onChange={handleCheckboxChange}
-              name="Internship"
-            />
-          }
-          label="Internship"
-        />
+        {["Full-Time", "Part-Time", "Work From Home", "Internship", "Work Abroad"].map((type) => (
+          <FormControlLabel
+            key={type}
+            control={
+              <Checkbox
+                checked={jobTypes.includes(type)}
+                onChange={handleCheckboxChange}
+                name={type}
+              />
+            }
+            label={type}
+          />
+        ))}
       </FormGroup>
 
       <TextField
@@ -113,17 +117,74 @@ const JobPostForm = ({ onJobPost }) => {
         required
       />
 
-      <TextField
-        label="Expected Salary (INR per month)"
-        type="number"
-        value={salary}
-        onChange={(e) => setSalary(e.target.value)}
-        fullWidth
-        margin="normal"
-        required
-      />
+      <Typography variant="subtitle1" sx={{ mt: 2 }}>
+        Salary (INR/month):
+      </Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <TextField
+            label="Min Salary"
+            type="number"
+            value={salaryMin}
+            onChange={(e) => setSalaryMin(e.target.value)}
+            fullWidth
+            required
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            label="Max Salary"
+            type="number"
+            value={salaryMax}
+            onChange={(e) => setSalaryMax(e.target.value)}
+            fullWidth
+            required
+          />
+        </Grid>
+      </Grid>
 
-      <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
+      <Typography variant="h6" sx={{ mt: 4, mb: 2 }}>
+        Recruiter Details
+      </Typography>
+      <Typography variant="h6" sx={{ mt: 4, mb: 2 }}>
+  Recruiter Details
+</Typography>
+
+<Grid container spacing={2}>
+  <Grid item xs={12} md={4}>
+    <TextField
+      label="Email"
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      fullWidth
+      required
+    />
+  </Grid>
+  <Grid item xs={12} md={4}>
+    <TextField
+      label="Password"
+      type="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      fullWidth
+      required
+    />
+  </Grid>
+  <Grid item xs={12} md={4}>
+    <TextField
+      label="Phone Number"
+      type="tel"
+      inputProps={{ maxLength: 10 }}
+      value={phone}
+      onChange={(e) => setPhone(e.target.value)}
+      fullWidth
+      required
+    />
+  </Grid>
+</Grid>
+
+      <Button type="submit" variant="contained" color="primary" sx={{ mt: 3 }}>
         Post Job
       </Button>
     </Box>
