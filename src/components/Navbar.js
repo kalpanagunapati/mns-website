@@ -11,22 +11,28 @@ const Navbar = () => {
   const isServicesPage = location.pathname === '/services';
 
   return (
-    <AppBar position='static' sx={{ backgroundColor: '#1976d2', margin:0,  }}>
+    <AppBar position='static' sx={{ backgroundColor: '#566573 ', margin:0,  }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
         {/* Logo */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <img
+          <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#fff' }}>
+            NMS <span style={{ color: '#e91e63' }}>Solutions</span>
+          </Typography>
+          {/* <img
             src={Logo}
             alt="logo"
             style={{ width: '100px', cursor: 'pointer' }}
             onClick={() => navigate('/')}
-          />
+          /> */}
         </Box>
 
         {/* Conditionally render nav buttons */}
         <Box>
           {isServicesPage ? (
-            <Button color="inherit" onClick={() => navigate('/training')}>Trainings</Button>
+            <>
+              <Button color="inherit" onClick={() => navigate('/training')}>Trainings</Button>
+              <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
+            </>
           ) : (
             <>
               <Button color="inherit" onClick={() => navigate('/')}>Home</Button>
@@ -41,10 +47,12 @@ const Navbar = () => {
               </Button>
               <Button color="inherit" onClick={() => navigate('/services')}>Services</Button>
               <Button color="inherit" onClick={() => navigate('/contact')}>Contact Us</Button>
-              <Button color="inherit" onClick={() => navigate('/login')}>Logout</Button>
+              <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
+              <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
             </>
           )}
         </Box>
+        
       </Toolbar>
     </AppBar>
   );

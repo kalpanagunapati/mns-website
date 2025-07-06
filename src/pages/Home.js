@@ -1,112 +1,75 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Container,
+  AppBar,
+  Toolbar,
   Typography,
   Button,
-  Paper,
   Box,
-  Grid,
-  Divider,
-  TextField
+  TextField,
+  Container,
+  Stack,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer/Footer';
-
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate();
-
-  const handleSearchChange = (e) => setSearchQuery(e.target.value);
-
-  const handleSubmit = () => {
-    navigate('/register');
-  };
-
   return (
-    <Box sx={{ backgroundColor: '#C0C0C0', marginTop: '10px'}}>
-      <Container>
-        {/* Hero Section */}
-        <Paper elevation={4} sx={{ padding: 4 }}>
-          <Typography variant="h4" color="primary" align="center" gutterBottom>
-            Welcome to NMS Job Portal
+    <Box sx={{
+      backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      color: '#fff'
+    }}>
+      
+      {/* Navbar */}
+      {/* <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', pt: 2 }}>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#fff' }}>
+            NMS <span style={{ color: '#e91e63' }}>Solutions</span>
           </Typography>
-          <Typography variant="subtitle1" align="center" gutterBottom>
-            Your one-stop platform for jobs and training opportunities across India
-          </Typography>
-
-          {/* Search and Button Row */}
-          <Box
-            sx={{
-              mt: 4,
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              gap: 2,
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexWrap: 'wrap'
-            }}
-          >
-            {/* Search Input */}
-            <TextField
-              variant="outlined"
-              placeholder="Search by role, location, or skills"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              sx={{ minWidth: 300 }}
-            />
-
-            {/* Register/Login Button */}
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{ minWidth: 150 }}
-              onClick={handleSubmit}
-            >
-              Register / Login
+          <Stack direction="row" spacing={4}>
+            {['Home', 'About us', 'Courses', 'News', 'Contact'].map(item => (
+              <Button key={item} sx={{ color: '#fff', fontWeight: 500 }}>{item}</Button>
+            ))}
+            <Button variant="contained" sx={{ bgcolor: '#e91e63', color: '#fff', textTransform: 'none' }}>
+              Login
             </Button>
-          </Box>
-        </Paper>
+          </Stack>
+        </Toolbar>
+      </AppBar> */}
 
-        {/* Info Section */}
-        <Box sx={{ mt: 6 }}>
-          <Typography variant="h4" align="center" gutterBottom>
-            Why Choose NMS Job Portal?
-          </Typography>
-          <Divider sx={{ mb: 4 }} />
+      {/* Hero Section */}
+      <Container sx={{ textAlign: 'center', pt: 15 }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Get The Best Free Online Courses
+        </Typography>
+        <Typography sx={{ maxWidth: 600, mx: 'auto', mb: 6 }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.
+        </Typography>
 
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Paper elevation={2} sx={{ padding: 3 }}>
-                <Typography variant="h5" color="secondary" gutterBottom>
-                  For Job Seekers
-                </Typography>
-                <Typography variant="body1">
-                  - Explore jobs across India by location, role, or salary. <br />
-                  - Personalized job recommendations. <br />
-                  - Training programs to upgrade your skills. <br />
-                  - Easy application and tracking dashboard.
-                </Typography>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Paper elevation={2} sx={{ padding: 3 }}>
-                <Typography variant="h5" color="secondary" gutterBottom>
-                  For Recruiters
-                </Typography>
-                <Typography variant="body1">
-                  - Post job listings with ease. <br />
-                  - Filter candidates by experience and skill. <br />
-                  - View applications in real-time. <br />
-                  - Access a large pool of trained candidates.
-                </Typography>
-              </Paper>
-            </Grid>
-          </Grid>
-        </Box>
+        {/* Form */}
+        <Stack
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={2}
+          justifyContent="center"
+          sx={{ maxWidth: 600, mx: 'auto' }}
+        >
+          <TextField
+            fullWidth
+            placeholder="Name"
+            variant="filled"
+            InputProps={{ disableUnderline: true, sx: { bgcolor: '#fff', borderRadius: 1 } }}
+          />
+          <TextField
+            fullWidth
+            placeholder="E-mail"
+            variant="filled"
+            InputProps={{ disableUnderline: true, sx: { bgcolor: '#fff', borderRadius: 1 } }}
+          />
+          <Button variant="contained" sx={{ bgcolor: '#e91e63', px: 4 }}>
+            Sign Up Now
+          </Button>
+        </Stack>
       </Container>
-      <Footer/>
     </Box>
   );
 }

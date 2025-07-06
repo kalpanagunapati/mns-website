@@ -1,118 +1,81 @@
-import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/material';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  TextField,
+  Container
+} from '@mui/material';
 import Footer from '../components/Footer/Footer';
 
-const trainingData = [
-    {
-        title: 'Java Full Stack',
-        image: 'https://cdn-icons-png.flaticon.com/512/919/919854.png',
-        description: 'Master Java, Spring Boot, Hibernate, and front-end tools to build robust full-stack applications.',
-    },
-    {
-        title: '.NET Development',
-        image: 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png',
-        description: 'Learn to develop web and desktop applications using C#, ASP.NET, and .NET Core.',
-    },
-    {
-        title: 'Python Programming',
-        image: 'https://cdn-icons-png.flaticon.com/512/5968/5968350.png',
-        description: 'Start your journey in Python, Django, and automation scripting with hands-on projects.',
-    },
-    {
-        title: 'Oracle Database',
-        image: 'https://cdn-icons-png.flaticon.com/512/2772/2772128.png',
-        description: 'Gain expertise in Oracle SQL, PL/SQL, and database administration.',
-    },
-    {
-        title: 'Web Development',
-        image: 'https://cdn-icons-png.flaticon.com/512/732/732212.png',
-        description: 'Build responsive websites using HTML, CSS, JavaScript, Bootstrap, and React.',
-    },
-    {
-        title: 'Data Science',
-        image: 'https://cdn-icons-png.flaticon.com/512/1055/1055687.png',
-        description: 'Explore data analysis, machine learning, and visualization using Python and tools like Pandas and Matplotlib.',
-    },
+const servicesData = [
+  { title: 'Web Development', description: 'Build fast, responsive websites using React, HTML, CSS, and Node.js.' },
+  { title: 'App Development', description: 'Develop Android and iOS apps with modern frameworks like Flutter and React Native.' },
+  { title: 'Custom Software Solutions', description: 'Tailored software products to meet your business requirements.' },
+  { title: 'Training & Workshops', description: 'Hands-on training sessions for freshers, job seekers, and professionals.' },
+  { title: 'Digital Marketing', description: 'SEO, SEM, and social media services to boost your brand online.' },
+  { title: 'Job Portal Platform', description: 'Post jobs, find candidates, and manage hiring through our portal.' },
+  { title: 'Cloud Services', description: 'AWS and Azure deployment, automation, and scaling.' },
+  { title: 'Technical Support', description: '24/7 support for software maintenance and infrastructure.' },
+  { title: 'IT Consulting', description: 'Expert guidance for business transformation and tech upgrade.' },
 ];
 
-export default function Services() {
-  const [data, setData] = useState();
-  const navigate = useNavigate(); // ✅ Moved here before usage
+const Services = () => {
+  const [search, setSearch] = useState('');
 
-  const handleJobsClick = () => {
-    navigate('/jobs'); // Change to your actual jobs route
-  };
-
-  const handleTrainingClick = () => {
-    navigate('/training'); // Change to your actual training route
-  };
+  const filteredServices = servicesData.filter(service =>
+    service.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <Box sx={{ backgroundColor: '#fff',}}>
-      {/* Navbar */}
-      {/* <AppBar position="static" sx={{ backgroundColor: '#0d47a1' }}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            NMS Solutions
-          </Typography>
-          <Button color="inherit" onClick={handleJobsClick}>
-            Jobs
-          </Button>
-          <Button color="inherit" onClick={handleTrainingClick}>
-            Training
-          </Button>
-        </Toolbar>
-      </AppBar> */}
-
-      {/* Main Content */}
+    <Box sx={{ bgcolor: '#1c1c28', minHeight: '100vh', color: '#fff', py: 6 }}>
       <Container>
-        <Typography variant="h4" gutterBottom>
-          Services
+        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: '#fdf089' }}>
+          All Our Services
         </Typography>
-                <div className="training-container">
-            <header className="header">
-                <h1 className="brand">NMS SOLUTIONS</h1>
-                <div className="social-icons">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </header>
+        <Typography variant="body1" mb={4}>
+          NMS Solutions offers a wide range of services tailored for businesses, professionals, and students — helping them grow through technology.
+        </Typography>
 
-            <div className="img-container">
-                <img
-                    src="https://media.istockphoto.com/id/944812540/photo/mountain-landscape-ponta-delgada-island-azores.jpg?s=1024x1024&w=is&k=20&c=LoC4mCau4RJAMj4JWJo-Q03Brq4qUFY1tx8NfaqngIQ="
-                    className="imag"
-                    alt="Online Training"
-                />
-            </div>
+        {/* Search Box */}
+        {/* <TextField
+          placeholder="Filter..."
+          variant="outlined"
+          fullWidth
+          sx={{
+            mb: 4,
+            input: { color: '#fff' },
+            fieldset: { borderColor: '#444' },
+            bgcolor: '#2a2a3d',
+            borderRadius: 3
+          }}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        /> */}
 
-            <section className="services">
-                <h2 className="training-heading">Our Training Services</h2>
-                <div className="cards-grid">
-                    {trainingData.map((course, i) => (
-                        <div className="card" key={i}>
-                            <img src={course.image} alt={course.title} className="card-img" />
-                            <h3 className="card-title">{course.title}</h3>
-                            <p className="card-description">{course.description}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Modern Footer */}
-          
-        </div>
-        {/* Add more service-related content here */}
+        {/* Service Cards */}
+        <Grid container spacing={3}>
+          {filteredServices.map((service, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card sx={{ bgcolor: '#2a2a3d', color: '#fff', height: '100%' ,width: '350px'}}>
+                <CardContent>
+                  <Typography variant="h6" fontWeight="bold" sx={{ color: '#fdf089' }}>
+                    {service.title}
+                  </Typography>
+                  <Typography variant="body2" mt={1}>
+                    {service.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
-        <Footer/>
+      <Footer/>
     </Box>
   );
-}
+};
+
+export default Services;

@@ -1,111 +1,101 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { Component } from 'react';
 import {
-  Box,
-  Button,
-  Container,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Paper,
-  Select,
-  TextField,
-  Typography,
-} from "@mui/material";
+    Box,
+    Button,
+    Container,
+    TextField,
+    Typography,
+    Paper,
+    Link
+} from '@mui/material';
 
-const RegisterPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (role === "recruiter") {
-      navigate("/recruiter");
-    } else if (role === "jobseeker") {
-      navigate("/applicant");
-    } else {
-      alert("Please select a role");
+class Register extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+        };
     }
-  };
 
-  return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        background: "linear-gradient(to right, #E0EAFC, #CFDEF3)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Container maxWidth="sm">
-        <Paper
-          elevation={6}
-          sx={{
-            borderRadius: 4,
-            padding: 4,
-            backgroundColor: "white",
-          }}
-        >
-          <Typography
-            variant="h4"
-            align="center"
-            gutterBottom
-            fontWeight="bold"
-          >
-            Register to Job Portal
-          </Typography>
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    };
 
-          <Box component="form" onSubmit={handleSubmit} mt={3}>
-            <TextField
-              label="Email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              fullWidth
-              margin="normal"
-              required
-              variant="outlined"
-            />
-            <TextField
-              label="Password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              fullWidth
-              margin="normal"
-              required
-              variant="outlined"
-            />
-            <FormControl fullWidth margin="normal" required>
-              <InputLabel>Role</InputLabel>
-              <Select
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                label="Role"
-              >
-                <MenuItem value="recruiter">Recruiter</MenuItem>
-                <MenuItem value="jobseeker">Job Seeker</MenuItem>
-              </Select>
-            </FormControl>
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', this.state);
+        // Handle actual registration logic here
+    };
 
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              fullWidth
-              size="large"
-              sx={{ mt: 2, borderRadius: 2, textTransform: "none" }}
-            >
-              Sign Up
-            </Button>
-          </Box>
-        </Paper>
-      </Container>
-    </Box>
-  );
-};
+    render() {
+        return (
+            <Container maxWidth="sm" sx={{ mt: 8 }}>
+                <Paper elevation={6} sx={{ p: 4, borderRadius: 3 }}>
+                    <Typography variant="h5" gutterBottom align="center">
+                        Create an Account
+                    </Typography>
+                    <Box
+                        component="form"
+                        onSubmit={this.handleSubmit}
+                        sx={{ mt: 2, display: 'flex', flexDirection: 'column', gap: 2 }}
+                    >
+                        <TextField
+                            label="Full Name"
+                            name="name"
+                            value={this.state.name}
+                            onChange={this.handleChange}
+                            required
+                            fullWidth
+                        />
+                        <TextField
+                            label="Email"
+                            name="email"
+                            type="email"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                            required
+                            fullWidth
+                        />
+                        <TextField
+                            label="Password"
+                            name="password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            required
+                            fullWidth
+                        />
+                        <TextField
+                            label="Confirm Password"
+                            name="confirmPassword"
+                            type="password"
+                            value={this.state.confirmPassword}
+                            onChange={this.handleChange}
+                            required
+                            fullWidth
+                        />
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            fullWidth
+                            sx={{ mt: 2, py: 1.5, fontWeight: 'bold' }}
+                        >
+                            Register
+                        </Button>
+                    </Box>
+                    <Typography variant="body2" align="center" sx={{ mt: 2 }}>
+                        Already have an account?{' '}
+                        <Link href="/login" underline="hover">
+                            Login here
+                        </Link>
+                    </Typography>
+                </Paper>
+            </Container>
+        );
+    }
+}
 
-export default RegisterPage;
+export default Register;
