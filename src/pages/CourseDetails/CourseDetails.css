@@ -1,0 +1,106 @@
+/* CourseDetails.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+}
+
+.course-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.glass-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 30px 40px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
+  list-style: disc;
+  color: #333;
+}
+
+li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #101110;
+  margin-top: 5px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  margin-top: 10px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.back-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-btn a:hover {
+  color: #1c5980;
+}
+
+.not-found {
+  color: red;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+}

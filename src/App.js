@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Jobs from "./pages/Jobs"
 import Training from "./pages/Training"
+import CourseDetails from './pages/CourseDetails/CourseDetails.js'; 
 import { useEffect } from "react";
 
 // Custom wrapper to conditionally render Navbar based on route
@@ -25,8 +26,9 @@ function AppContent() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/jobs" element={<Jobs/>} />
+        <Route path="/jobseeker" element={<Jobs/>} />
         <Route path="/training" element={<Training/>} />
+        <Route path="/course/:title" element={<CourseDetails />}/>
       </Routes>
     </>
   );

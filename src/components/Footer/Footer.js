@@ -8,9 +8,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section about">
-          <h3>About NMS</h3>
+          <h3>About MNS</h3>
           <p>
-            NMS SOLUTIONS is a premier software training institute in Hyderabad,
+            MNS SOLUTIONS is a premier software training institute in Hyderabad,
             dedicated to upskilling aspiring developers and professionals with
             cutting-edge technologies.
           </p>
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} NMS Solutions | All Rights Reserved</p>
+        <p>&copy; {new Date().getFullYear()} MNS Solutions | All Rights Reserved</p>
       </div>
     </footer>
   );

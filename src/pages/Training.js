@@ -1,39 +1,74 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Training.css';
+import { Link } from 'react-router-dom';
+import CourseRegistration from '../components/CourseRegistration/CourseRegistration';
+
 
 const trainingData = [
-    {
-        title: 'Java Full Stack',
-        image: 'https://cdn-icons-png.flaticon.com/512/919/919854.png',
-        description: 'Master Java, Spring Boot, Hibernate, and front-end tools to build robust full-stack applications.',
-    },
-    {
-        title: '.NET Development',
-        image: 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png',
-        description: 'Learn to develop web and desktop applications using C#, ASP.NET, and .NET Core.',
-    },
-    {
-        title: 'Python Programming',
-        image: 'https://cdn-icons-png.flaticon.com/512/5968/5968350.png',
-        description: 'Start your journey in Python, Django, and automation scripting with hands-on projects.',
-    },
-    {
-        title: 'Oracle Database',
-        image: 'https://cdn-icons-png.flaticon.com/512/2772/2772128.png',
-        description: 'Gain expertise in Oracle SQL, PL/SQL, and database administration.',
-    },
-    {
-        title: 'Web Development',
-        image: 'https://cdn-icons-png.flaticon.com/512/732/732212.png',
-        description: 'Build responsive websites using HTML, CSS, JavaScript, Bootstrap, and React.',
-    },
-    {
-        title: 'Data Science',
-        image: 'https://cdn-icons-png.flaticon.com/512/1055/1055687.png',
-        description: 'Explore data analysis, machine learning, and visualization using Python and tools like Pandas and Matplotlib.',
-    },
+  {
+    title: 'Java Full Stack',
+    image: 'https://cdn-icons-png.flaticon.com/512/919/919854.png',
+    description: 'Master Java, Spring Boot, Hibernate, and front-end tools to build robust full-stack applications.',
+  },
+  {
+    title: '.NET Development',
+    image: 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png',
+    description: 'Learn to develop web and desktop applications using C#, ASP.NET, and .NET Core.',
+  },
+  {
+    title: 'Python Programming',
+    image: 'https://cdn-icons-png.flaticon.com/512/5968/5968350.png',
+    description: 'Start your journey in Python, Django, and automation scripting with hands-on projects.',
+  },
+  {
+    title: 'AWS DevOps',
+    image: 'https://cdn-icons-png.flaticon.com/512/873/873107.png',
+    description: 'Learn how to manage cloud infrastructure and automate CI/CD pipelines using AWS services, Docker, Jenkins, and more.',
+  },
+  {
+    title: 'Oracle Database',
+    image: 'https://cdn-icons-png.flaticon.com/512/2772/2772128.png',
+    description: 'Gain expertise in Oracle SQL, PL/SQL, and database administration.',
+  },
+  {
+    title: 'Web Development',
+    image: 'https://cdn-icons-png.flaticon.com/512/732/732212.png',
+    description: 'Build responsive websites using HTML, CSS, JavaScript, Bootstrap, and React.',
+  },
+  {
+    title: 'Salesforce Course',
+    image: 'https://cdn-icons-png.flaticon.com/512/5968/5968855.png',
+    description: 'Learn to customize and develop Salesforce apps using Apex, Visualforce, and Lightning components.',
+  },
+  {
+    title: 'Power BI',
+    image: 'https://cdn-icons-png.flaticon.com/512/4248/4248443.png',
+    description: 'Learn to visualize data, create dashboards, and build business intelligence reports using Power BI.',
+  },
+  {
+    title: 'Manual Testing',
+    image: 'https://cdn-icons-png.flaticon.com/512/2933/2933245.png',
+    description: 'Understand the fundamentals of software testing, test case creation, and bug tracking manually.',
+  },
+  {
+    title: 'Selenium Course',
+    image: 'https://cdn-icons-png.flaticon.com/512/2721/2721290.png',
+    description: 'Automate web applications using Selenium WebDriver, TestNG, and frameworks for real-time testing.',
+  },
+  {
+    title: 'Digital Marketing',
+    image: 'https://cdn-icons-png.flaticon.com/512/1087/1087929.png',
+    description: 'Master SEO, SEM, social media, email, and content marketing strategies to grow online presence.',
+  },
+  {
+    title: 'Data Science',
+    image: 'https://cdn-icons-png.flaticon.com/512/1055/1055687.png',
+    description: 'Explore data analysis, machine learning, and visualization using Python and tools like Pandas and Matplotlib.',
+  },
 ];
+
+
 
 const Training = () => {
     return (
@@ -65,14 +100,20 @@ const Training = () => {
                 <h2 className="training-heading">Our Training Services</h2>
                 <div className="cards-grid">
                     {trainingData.map((course, i) => (
-                        <div className="card" key={i}>
-                            <img src={course.image} alt={course.title} className="card-img" />
-                            <h3 className="card-title">{course.title}</h3>
-                            <p className="card-description">{course.description}</p>
-                        </div>
+                        
+                            <Link to={`/course/${encodeURIComponent(course.title)}`} key={i} className="card-link">
+                                <div className='card'>
+                                    <img src={course.image} alt={course.title} className="card-img" />
+                                    <h3 className="card-title">{course.title}</h3>
+                                    <p className="card-description">{course.description}</p>
+                                </div>
+                            </Link>
+                        
                     ))}
                 </div>
             </section>
+
+            <CourseRegistration/>
 
             {/* Modern Footer */}
             <footer className="footer">

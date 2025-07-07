@@ -36,7 +36,7 @@ const Services = () => {
           All Our Services
         </Typography>
         <Typography variant="body1" mb={4}>
-          NMS Solutions offers a wide range of services tailored for businesses, professionals, and students — helping them grow through technology.
+          MNS Solutions offers a wide range of services tailored for businesses, professionals, and students — helping them grow through technology.
         </Typography>
 
         {/* Search Box */}

@@ -135,6 +135,41 @@ html, body {
     width:100%;
     height:460px;
 }
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease;
+}
 
+.card-link:hover {
+    transform: scale(1.02);
+}
 
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #2e1065; /* deep purple or dark */
+}
+
+.card-description {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
 
