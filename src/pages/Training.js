@@ -175,8 +175,8 @@ const Training = () => {
           </div>
           <div className="footer-section contact">
             <h3>Contact Us</h3>
-            <p><i className="fas fa-phone"></i> +91 98765 43210</p>
-            <p><i className="fas fa-envelope"></i> info@nms-solutions.com</p>
+            <p><i className="fas fa-phone"></i> +91 6305427016</p>
+            <p><i className="fas fa-envelope"></i> https://mnssolutionsgroup.com</p>
             <p><i className="fas fa-map-marker-alt"></i> Ameerpet, Hyderabad, India</p>
           </div>
         </div>

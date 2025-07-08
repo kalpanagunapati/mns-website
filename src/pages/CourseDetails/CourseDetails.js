@@ -26,6 +26,13 @@ const courseDetails = {
     price: '₹10,000',
     video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
   },
+  'Python Programming': {
+    concepts: ['Core Python', 'OOPs', 'Django', 'Automation', 'REST APIs'],
+    benefits: ['Easy to learn', 'Useful for scripting, ML, web apps'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
   'Oracle Database': {
     concepts: ['SQL', 'PL/SQL', 'Oracle Architecture', 'Performance Tuning', 'DB Admin'],
     benefits: ['Database admin skills', 'Used in enterprise systems'],
@@ -33,6 +40,62 @@ const courseDetails = {
     price: '₹10,000',
     video: 'https://www.youtube.com/embed/6Z2b9dD6xhw',
   },
+  'AWS DevOps': {
+    concepts: ['Cloud Models,Cloud Deployment Models,Global Infrastructure', 'Copute,Storage,Databases,Networking', 'Auto Scaling', 'Devops Practices', 'Severless Architecture'],
+    benefits: ['Easy to learn', 'Free Tier and Student Support','Strong Resume Value','Hands-on Cloud Experience'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
+  'Web Development': {
+    concepts: ['Frontend Development', 'Backend Development', 'Client-Server Architecture', 'Databaes', 'RESTful APIs'],
+    benefits: ['Easy to learn', 'High Demand in Job Market', 'Cross-Platform Compatibility'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
+  'Salesforce Course': {
+    concepts: ['CRM(Customer Relationship Management)', 'Salesforce Architecture', 'Automation Tools', 'Apex Programming', 'Lightning Components and App Builder'],
+    benefits: ['Globally recognized certifications', 'High demand in the IT and business sectors', 'Cloud-based solution with job opportunities worldwide','Enhances automation and Customer services skills','offers roles like Salesforce Admin Developer,Counsultant'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
+  'Power BI': {
+    concepts: ['Data Modeling and Transformation', 'DAX(Data Analysis Expressions)', 'Interactive Dashboards and Reports', 'Connecting Data Source(Excel,SQl,Web APIs', 'Publishing and Sharing Reports(Power BI Service)'],
+    benefits: ['Easy to create insightful visualizations', 'Widely used in business and finance industies','High-paying job roles like BI Analyst or Data Analyst','Strong integration with Microsoft tools(Excel,Azure)'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
+  'Manual Testing': {
+    concepts: ['SDLC&STLC(Development Testing Life Cycles)', 'Test Case Design&Execution', 'Bug Tracking Tools(like JIRRA)', 'Automation Testing with Selenium WebDriver', 'Basic Programming(Java/Python)for Automation'],
+    benefits: ['Fundamental understanding of software testing', 'In-demand skills in both manual and automation tetsing','Opportunities in QA,Test Analyst,and Automation roles','Strong foundation for learning other testing tools','Easy entry point into IT without a coding background'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
+  'Selenium Course': {
+    concepts: ['Selenium WebDriver', 'Locators and XPath', 'Test Automation Framworks', 'Integration Tools', 'Scripting Language Basics'],
+    benefits: ['Automative Repetitive Testing Tasks', 'Supports Multiple Browsers& Languages', 'Open-Source * Free to Use','Higb Demand in QA Jobs','Foundation for Advanced Tools'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
+  'Digital Marketing': {
+    concepts: ['SEO(Search Engine Optimization)', 'SEM&Paid Ads(Google Ads,Facebook Ads)', 'Social Media Marketing & Content Strategy', 'Email & Affiliate Marketing', 'Google Analytics& Conversion Tracking'],
+    benefits: ['High Demand in all business sectors', 'Easy to start freelancing or online business', 'Helps increase brand visibility and reach','Measurable results with data-driven strategies','Multiple job role:Digital Marketer,SEO Analyst,Content Manager'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  },
+  'Data Science': {
+    concepts: ['Data Cleaning and Preprocessing(Python,Pands,Numpy)', 'Exploratory Data Analyst(EDA)', 'Statistical Methods and Hypothesis Testing', 'Machine Learning Algorithms(Regression,Classification)', 'Data Visualization(Matplotlib,Seaborn,Tableau'],
+    benefits: ['High-paying and future-proof career', 'Skills applicable acreoos many industries(healthcare,finance,etc)', 'Strong demand  for Data Analysis and Data Scietists','Encourages critical thinking and problem-solving','Enables building predictive and data-driven applications'],
+    duration: '2 Months',
+    price: '₹10,000',
+    video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
+  }
 };
 
 const CourseDetail = () => {

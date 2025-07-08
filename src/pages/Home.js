@@ -9,6 +9,7 @@ import {
   Container,
   Stack,
 } from '@mui/material';
+import Footer from '../components/Footer/Footer';
 
 export default function Home() {
   return (
@@ -40,14 +41,16 @@ export default function Home() {
       {/* Hero Section */}
       <Container sx={{ textAlign: 'center', pt: 15 }}>
         <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
-          Get The Best Free Online Courses
+          Make Your Dream Done With MNS Solutions 
+          {/* Get The Best Free Online Courses */}
         </Typography>
         <Typography sx={{ maxWidth: 600, mx: 'auto', mb: 6 }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.
+          your trusted partner for job opportunities and professional training.
+          At MNS Solutions, we empower your future by connecting you with the right skills and the right jobs
         </Typography>
 
         {/* Form */}
-        <Stack
+        {/* { <Stack
           direction={{ xs: 'column', md: 'row' }}
           spacing={2}
           justifyContent="center"
@@ -68,8 +71,9 @@ export default function Home() {
           <Button variant="contained" sx={{ bgcolor: '#e91e63', px: 4 }}>
             Sign Up Now
           </Button>
-        </Stack>
+        </Stack>} */}
       </Container>
     </Box>
+
   );
 }
