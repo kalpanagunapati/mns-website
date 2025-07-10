@@ -13,12 +13,14 @@ import Footer from '../components/Footer/Footer';
 
 export default function Home() {
   return (
+    <Box sx={{margin:'0px', backgroundSize:'cover',}}>
     <Box sx={{
       backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh',
-      color: '#fff'
+      color: '#fff',
+      marginBottom: '0px'
     }}>
       
       {/* Navbar */}
@@ -44,7 +46,7 @@ export default function Home() {
           Make Your Dream Done With MNS Solutions 
           {/* Get The Best Free Online Courses */}
         </Typography>
-        <Typography sx={{ maxWidth: 600, mx: 'auto', mb: 6 }}>
+        <Typography sx={{ maxWidth: 600, mx: 'auto', mb: 6, color:'black', fontSize:'26px'}}>
           your trusted partner for job opportunities and professional training.
           At MNS Solutions, we empower your future by connecting you with the right skills and the right jobs
         </Typography>
@@ -73,6 +75,8 @@ export default function Home() {
           </Button>
         </Stack>} */}
       </Container>
+    </Box>
+    <Footer/>
     </Box>
 
   );

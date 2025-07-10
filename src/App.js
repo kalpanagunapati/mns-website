@@ -10,6 +10,8 @@ import Jobs from "./pages/Jobs"
 import Training from "./pages/Training"
 import CourseDetails from './pages/CourseDetails/CourseDetails.js'; 
 import { useEffect } from "react";
+import ContactUs from "./pages/ContactUs/ContactUs.js";
+import AboutUs from "./pages/AboutUs/AboutUs.js";
 
 // Custom wrapper to conditionally render Navbar based on route
 function AppContent() {
@@ -29,6 +31,8 @@ function AppContent() {
         <Route path="/jobseeker" element={<Jobs/>} />
         <Route path="/training" element={<Training/>} />
         <Route path="/course/:title" element={<CourseDetails />}/>
+        <Route path="/contact" element={<ContactUs />}/>
+        <Route path="/aboutus" element={<AboutUs />}/>
       </Routes>
     </>
   );

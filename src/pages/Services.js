@@ -35,7 +35,7 @@ const Services = () => {
         <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: '#fdf089' }}>
           All Our Services
         </Typography>
-        <Typography variant="body1" mb={4}>
+        <Typography variant="body1" mb={4} color='white'>
           MNS Solutions offers a wide range of services tailored for businesses, professionals, and students — helping them grow through technology.
         </Typography>
 
@@ -64,7 +64,7 @@ const Services = () => {
                   <Typography variant="h6" fontWeight="bold" sx={{ color: '#fdf089' }}>
                     {service.title}
                   </Typography>
-                  <Typography variant="body2" mt={1}>
+                  <Typography variant="body2" mt={1} color="white">
                     {service.description}
                   </Typography>
                 </CardContent>

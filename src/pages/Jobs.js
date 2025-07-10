@@ -131,9 +131,9 @@ export default function JobsMUI() {
   const jobRefs = useRef({});
 
   return (
-    <Box sx={{ bgcolor: '#f0f0f0', minHeight: '100vh', p: 4 }}>
+    <Box sx={{bgcolor: '#f0f0f0', minHeight: '100vh', p: 4 }}>
       {/* Search Filters */}
-      <Grid container spacing={2} justifyContent="center" mb={4} bgcolor="#566573" height="100px" paddingTop="20px">
+      <Grid container spacing={2} justifyContent="center" mb={4}  height="100px" paddingTop="20px">
         <Grid item>
           <Autocomplete
             options={jobRoles}

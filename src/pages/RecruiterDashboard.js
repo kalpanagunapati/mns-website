@@ -23,6 +23,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import SearchIcon from '@mui/icons-material/Search';
 
 import Footer from '../components/Footer/Footer';
+import ResumeList from "../components/ResumesList/ResumesList";
 
 
 const jobRoles = [
@@ -52,8 +53,9 @@ const RecruiterDashboard = () => {
   };
 
   return (
+    <Box>
     <Container sx={{ mt: 4 }}>
-      <Grid container spacing={2} justifyContent="center" mb={4} bgcolor="#566573" height="100px" paddingTop="20px">
+      <Grid container spacing={2} justifyContent="center" mb={4}  height="100px" paddingTop="20px">
         <Grid item>
           <Autocomplete
             options={jobRoles}
@@ -81,6 +83,7 @@ const RecruiterDashboard = () => {
           </Button>
         </Grid>
       </Grid>
+      <ResumeList/>
       <Typography variant="h4" gutterBottom>
         Recruiter Dashboard
       </Typography>
@@ -88,6 +91,9 @@ const RecruiterDashboard = () => {
       <JobPostForm onJobPost={handleJobPost} />
       <ApplicationList applications={applications} />
     </Container>
+    <Footer/>
+    </Box>
+    
   );
 };
 

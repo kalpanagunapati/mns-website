@@ -67,19 +67,12 @@ const Navbar = () => {
           ) : (
             <>
               <Button color="inherit" onClick={() => navigate('/')}>Home</Button>
-              <Button
-                color="inherit"
-                component="a"
-                href="https://aurangabad.quikr.com/html/about.php"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                About Us
-              </Button>
+              <Button color="inherit" onClick={() => navigate('/aboutus')}>AboutUs</Button>
               <Button color="inherit" onClick={() => navigate('/services')}>Services</Button>
               <Button color="inherit" onClick={() => navigate('/contact')}>Contact Us</Button>
               <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
               <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
+             
             </>
           )}
         </Box>
