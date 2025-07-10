@@ -36,8 +36,50 @@ const jobsData = [
       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/KUKUFM_Logo.png/600px-KUKUFM_Logo.png',
   },
   {
+    title: 'Python Developer',
+    company: 'MNS Technology',
+    rating: 4.0,
+    reviews: 81,
+    experience: '1-3 Yrs',
+    location: 'Hyderabad, Bengaluru',
+    description:
+      'The ideal candidate should have excellent communication skills and proficiency in python language.',
+    tags: ['Malayalam', 'Senior Executive', 'Python executive'],
+    posted: '3+ weeks ago',
+    logo:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/KUKUFM_Logo.png/600px-KUKUFM_Logo.png',
+  },
+  {
+    title: 'FrontEnd Developer',
+    company: 'KVk',
+    rating: 4.0,
+    reviews: 81,
+    experience: '1-2 Yrs',
+    location: 'Hyderabad, Bengaluru',
+    description:
+      'The ideal candidate should have excellent communication skills and proficiency in FrontEnd Html,Css,Js.',
+    tags: ['English', 'Senior Executive', 'FrontEnd Knowledge'],
+    posted: '3+ weeks ago',
+    logo:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/KUKUFM_Logo.png/600px-KUKUFM_Logo.png',
+  },
+  {
+    title: 'BackEnd Developer',
+    company: 'KCK',
+    rating: 4.0,
+    reviews: 81,
+    experience: '1-2 Yrs',
+    location: 'Hyderabad, Bengaluru',
+    description:
+      'The ideal candidate should have excellent communication skills and proficiency in BackEnd(node.js,express.js,sql,Mango Db).',
+    tags: ['English', 'Senior Executive', 'BackEnd knowledge'],
+    posted: '3+ weeks ago',
+    logo:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/KUKUFM_Logo.png/600px-KUKUFM_Logo.png',
+  },
+  {
     title: 'Android Developer',
-    company: 'ABC',
+    company: 'MNK Technology',
     rating: 4.0,
     reviews: 81,
     experience: '1-2 Yrs',
@@ -51,49 +93,7 @@ const jobsData = [
   },
   {
     title: 'Android Developer',
-    company: 'ABC',
-    rating: 4.0,
-    reviews: 81,
-    experience: '1-2 Yrs',
-    location: 'Hyderabad, Bengaluru',
-    description:
-      'The ideal candidate should have excellent communication skills and proficiency in Malayalam.',
-    tags: ['Malayalam', 'Senior Executive', 'Customer Support Associate', 'Customer support'],
-    posted: '3+ weeks ago',
-    logo:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/KUKUFM_Logo.png/600px-KUKUFM_Logo.png',
-  },
-  {
-    title: 'Android Developer',
-    company: 'ABC',
-    rating: 4.0,
-    reviews: 81,
-    experience: '1-2 Yrs',
-    location: 'Hyderabad, Bengaluru',
-    description:
-      'The ideal candidate should have excellent communication skills and proficiency in Malayalam.',
-    tags: ['Malayalam', 'Senior Executive', 'Customer Support Associate', 'Customer support'],
-    posted: '3+ weeks ago',
-    logo:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/KUKUFM_Logo.png/600px-KUKUFM_Logo.png',
-  },
-  {
-    title: 'Android Developer',
-    company: 'ABC',
-    rating: 4.0,
-    reviews: 81,
-    experience: '1-2 Yrs',
-    location: 'Hyderabad, Bengaluru',
-    description:
-      'The ideal candidate should have excellent communication skills and proficiency in Malayalam.',
-    tags: ['Malayalam', 'Senior Executive', 'Customer Support Associate', 'Customer support'],
-    posted: '3+ weeks ago',
-    logo:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/KUKUFM_Logo.png/600px-KUKUFM_Logo.png',
-  },
-  {
-    title: 'Android Developer',
-    company: 'ABC',
+    company: 'Yup Tv',
     rating: 4.0,
     reviews: 81,
     experience: '1-2 Yrs',

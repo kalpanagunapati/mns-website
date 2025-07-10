@@ -29,7 +29,7 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p><i className="fas fa-phone"></i> +91 6305427016</p>
           <p><i className="fas fa-envelope"></i> https://mnssolutionsgroup.com</p>
-          <p><i className="fas fa-map-marker-alt"></i> Ameerpet, Hyderabad, India</p>
+          <p><i className="fas fa-map-marker-alt"></i> Kondapur, Hyderabad, India</p>
         </div>
       </div>
       <div className="footer-bottom">
