@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Grid, Card, CardContent, CardMedia, Box } from '@mui/material';
+import { Container, Typography, Grid, Card, CardContent, Box } from '@mui/material';
 import Footer from '../../components/Footer/Footer';
 
 const AboutUs = () => {

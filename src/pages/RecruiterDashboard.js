@@ -4,22 +4,22 @@ import ApplicationList from "../components/ApplicationList";
 import { Container, Typography } from "@mui/material";
 import {
   Box,
-  Card,
+  // Card,
   Grid,
   TextField,
   Button,
-  Chip,
-  Avatar,
-  IconButton,
+  // Chip,
+  // Avatar,
+  // IconButton,
 } from '@mui/material';
 
 import Autocomplete from '@mui/material/Autocomplete';
 
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import StarIcon from '@mui/icons-material/Star';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import DescriptionIcon from '@mui/icons-material/Description';
+// import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+// import StarIcon from '@mui/icons-material/Star';
+// import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+// import LocationOnIcon from '@mui/icons-material/LocationOn';
+// import DescriptionIcon from '@mui/icons-material/Description';
 import SearchIcon from '@mui/icons-material/Search';
 
 import Footer from '../components/Footer/Footer';

@@ -10,7 +10,7 @@ import {
   MenuItem
 } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Logo from '../images/logo.jpg';
+// import Logo from '../images/logo.jpg';
 
 const Navbar = () => {
   const navigate = useNavigate();

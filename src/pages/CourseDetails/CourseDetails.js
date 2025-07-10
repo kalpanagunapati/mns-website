@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './CourseDetails.css';
-import { Description } from '@mui/icons-material';
+// import { Description } from '@mui/icons-material';
 
 const courseDetails = {
   '.NET Development': {
@@ -26,7 +26,7 @@ const courseDetails = {
     price: '₹10,000',
     video: 'https://www.youtube.com/embed/kqtD5dpn9C8',
   },
-  'Python Programming': {
+  'Mern': {
     concepts: ['Core Python', 'OOPs', 'Django', 'Automation', 'REST APIs'],
     benefits: ['Easy to learn', 'Useful for scripting, ML, web apps'],
     duration: '2 Months',

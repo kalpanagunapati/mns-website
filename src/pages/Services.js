@@ -5,7 +5,7 @@ import {
   Grid,
   Card,
   CardContent,
-  TextField,
+  // TextField,
   Container
 } from '@mui/material';
 import Footer from '../components/Footer/Footer';
@@ -23,7 +23,7 @@ const servicesData = [
 ];
 
 const Services = () => {
-  const [search, setSearch] = useState('');
+  const [search] = useState('');
 
   const filteredServices = servicesData.filter(service =>
     service.title.toLowerCase().includes(search.toLowerCase())

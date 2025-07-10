@@ -4,11 +4,11 @@ import {
   Box,
   Button,
   Container,
-  FormControl,
-  InputLabel,
-  MenuItem,
+  // FormControl,
+  // InputLabel,
+  // MenuItem,
   Paper,
-  Select,
+  // Select,
   TextField,
   Typography,
 } from "@mui/material";
@@ -16,7 +16,7 @@ import {
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RecruiterDashboard from "./pages/RecruiterDashboard";
 import JobApplicantDashboard from "./pages/JobApplicantDashboard";
 import RegisterPage from "./pages/RegisterPage";
@@ -9,14 +9,14 @@ import Services from "./pages/Services";
 import Jobs from "./pages/Jobs"
 import Training from "./pages/Training"
 import CourseDetails from './pages/CourseDetails/CourseDetails.js'; 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import ContactUs from "./pages/ContactUs/ContactUs.js";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 
 // Custom wrapper to conditionally render Navbar based on route
 function AppContent() {
-  const location = useLocation();
-  const hideNavbarRoutes = ['/services']; // Add more routes if needed
+  // const location = useLocation();
+  // const hideNavbarRoutes = ['/services']; // Add more routes if needed
 
   return (
     <>
