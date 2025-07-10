@@ -8,6 +8,7 @@ import {
     Paper,
     Link
 } from '@mui/material';
+import Footer from '../components/Footer/Footer';
 
 class Register extends Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class Register extends Component {
 
     render() {
         return (
+            <Box>
             <Container maxWidth="sm" sx={{ mt: 8 }}>
                 <Paper elevation={6} sx={{ p: 4, borderRadius: 3 }}>
                     <Typography variant="h5" gutterBottom align="center">
@@ -94,6 +96,8 @@ class Register extends Component {
                     </Typography>
                 </Paper>
             </Container>
+            <Footer/>
+            </Box>
         );
     }
 }

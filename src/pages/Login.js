@@ -12,6 +12,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import Footer from "../components/Footer/Footer";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -31,6 +32,7 @@ const LoginPage = () => {
   };
 
   return (
+    <Box>
     <Box
       sx={{
         minHeight: "100vh",
@@ -104,6 +106,8 @@ const LoginPage = () => {
           </Box>
         </Paper>
       </Container>
+    </Box>
+    <Footer/>
     </Box>
   );
 };
