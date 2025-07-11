@@ -1,105 +1,202 @@
+// src/pages/Register.js
+
 import React, { Component } from 'react';
 import {
-    Box,
-    Button,
-    Container,
-    TextField,
-    Typography,
-    Paper,
-    Link
+  Box,
+  Button,
+  Container,
+  TextField,
+  Typography,
+  Paper,
+  Link
 } from '@mui/material';
 import Footer from '../components/Footer/Footer';
 
 class Register extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            password: '',
-            confirmPassword: '',
-        };
-    }
-
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
     };
+  }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', this.state);
-        // Handle actual registration logic here
-    };
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-    render() {
-        return (
-            <Box>
-            <Container maxWidth="sm" sx={{ mt: 8 }}>
-                <Paper elevation={6} sx={{ p: 4, borderRadius: 3 }}>
-                    <Typography variant="h5" gutterBottom align="center">
-                        Create an Account
-                    </Typography>
-                    <Box
-                        component="form"
-                        onSubmit={this.handleSubmit}
-                        sx={{ mt: 2, display: 'flex', flexDirection: 'column', gap: 2 }}
-                    >
-                        <TextField
-                            label="Full Name"
-                            name="name"
-                            value={this.state.name}
-                            onChange={this.handleChange}
-                            required
-                            fullWidth
-                        />
-                        <TextField
-                            label="Email"
-                            name="email"
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                            required
-                            fullWidth
-                        />
-                        <TextField
-                            label="Password"
-                            name="password"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            required
-                            fullWidth
-                        />
-                        <TextField
-                            label="Confirm Password"
-                            name="confirmPassword"
-                            type="password"
-                            value={this.state.confirmPassword}
-                            onChange={this.handleChange}
-                            required
-                            fullWidth
-                        />
-                        <Button
-                            type="submit"
-                            variant="contained"
-                            fullWidth
-                            sx={{ mt: 2, py: 1.5, fontWeight: 'bold' }}
-                        >
-                            Register
-                        </Button>
-                    </Box>
-                    <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-                        Already have an account?{' '}
-                        <Link href="/login" underline="hover">
-                            Login here
-                        </Link>
-                    </Typography>
-                </Paper>
-            </Container>
-            <Footer/>
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', this.state);
+    // Add registration logic here
+  };
+
+  render() {
+    return (
+      <Box
+        sx={{
+          minHeight: '100vh',
+          backgroundImage:
+            "url(https://www.transparenttextures.com/patterns/stardust.png)", // transparent styled background
+          backgroundColor: "#0f2027",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          fontFamily: 'Poppins, sans-serif',
+        }}
+      >
+        <Container
+          maxWidth="sm"
+          sx={{
+            mt: 10,
+            mb: 4,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          {/* Headings above the card */}
+          <Typography
+            variant="h3"
+            align="center"
+            sx={{
+              fontWeight: 700,
+              color: '#0693E3',
+              mb: 1,
+              textShadow: '2px 2px 4px rgba(0,0,0,0.6)',
+            }}
+          >
+            Welcome to MNS Solutions
+          </Typography>
+          <Typography
+            variant="h6"
+            align="center"
+            sx={{
+              color: 'white',
+              mb: 4,
+              fontWeight: 300,
+              textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
+            }}
+          >
+            Lets get you started with your account
+          </Typography>
+
+          {/* Card */}
+          <Paper
+            elevation={0}
+            sx={{
+              p: 4,
+              borderRadius: '20px',
+              width: '100%',
+              background: 'rgba(255, 255, 255, 0.15)',
+              boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+              backdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
+            }}
+          >
+            <Typography
+              variant="h5"
+              gutterBottom
+              align="center"
+              sx={{
+                fontWeight: 600,
+                color: '#0693E3',
+                mb: 3,
+                fontFamily: 'Poppins, sans-serif',
+              }}
+            >
+              Create Your Account
+            </Typography>
+
+            <Box
+              component="form"
+              onSubmit={this.handleSubmit}
+              sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+            >
+              <TextField
+                label="Full Name"
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                required
+                fullWidth
+                variant="outlined"
+                InputProps={{
+                  style: { backgroundColor: '#fff', borderRadius: 10 },
+                }}
+              />
+              <TextField
+                label="Email"
+                name="email"
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                required
+                fullWidth
+                variant="outlined"
+                InputProps={{
+                  style: { backgroundColor: '#fff', borderRadius: 10 },
+                }}
+              />
+              <TextField
+                label="Password"
+                name="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+                required
+                fullWidth
+                variant="outlined"
+                InputProps={{
+                  style: { backgroundColor: '#fff', borderRadius: 10 },
+                }}
+              />
+              <TextField
+                label="Confirm Password"
+                name="confirmPassword"
+                type="password"
+                value={this.state.confirmPassword}
+                onChange={this.handleChange}
+                required
+                fullWidth
+                variant="outlined"
+                InputProps={{
+                  style: { backgroundColor: '#fff', borderRadius: 10 },
+                }}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{
+                  mt: 2,
+                  py: 1.3,
+                  fontWeight: 'bold',
+                  fontSize: '1rem',
+                  borderRadius: 10,
+                  backgroundColor: '#6a11cb',
+                  backgroundImage: 'linear-gradient(315deg, #6a11cb 0%, #2575fc 74%)',
+                }}
+              >
+                Register
+              </Button>
             </Box>
-        );
-    }
+
+            <Typography variant="body2" align="center" sx={{ mt: 3, color: '#fff' }}>
+              Already have an account?{' '}
+              <Link href="/login" underline="hover" color="inherit" fontWeight="bold">
+                Login here
+              </Link>
+            </Typography>
+          </Paper>
+        </Container>
+        <Footer />
+      </Box>
+    );
+  }
 }
 
 export default Register;

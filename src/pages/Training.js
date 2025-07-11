@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Training.css';
 import CourseRegistration from '../components/CourseRegistration/CourseRegistration';
+// import AboutUs from "../pages/AboutUs/AboutUs.js";
+// import { useNavigate} from 'react-router-dom';
 
 // Custom arrow components
 const NextArrow = ({ onClick }) => (
@@ -116,12 +118,14 @@ const Training = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
+  
 
+  // const navigate = useNavigate();
   return (
     <div className="training-container">
       {/* Header */}
       <header className="header">
-        <h1 className="brand">NMS SOLUTIONS</h1>
+        <h1 className="brand">MNS SOLUTIONS</h1>
         <div className="social-icons">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
@@ -163,12 +167,12 @@ const Training = () => {
         <div className="footer-content">
           <div className="footer-section about">
             <h3>About NMS</h3>
-            <p>NMS SOLUTIONS is a premier software training institute in Hyderabad, dedicated to upskilling aspiring developers and professionals with cutting-edge technologies.</p>
+            <p>MNS SOLUTIONS is a premier software training institute in Hyderabad, dedicated to upskilling aspiring developers and professionals with cutting-edge technologies.</p>
           </div>
           <div className="footer-section links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#about">About Us</a></li>
+              <li><Link to="/aboutus">AboutUs</Link></li>
               <li><a href="#services">Our Services</a></li>
               <li><a href="#contact">Contact Us</a></li>
             </ul>
@@ -177,11 +181,11 @@ const Training = () => {
             <h3>Contact Us</h3>
             <p><i className="fas fa-phone"></i> +91 6305427016</p>
             <p><i className="fas fa-envelope"></i> https://mnssolutionsgroup.com</p>
-            <p><i className="fas fa-map-marker-alt"></i> Ameerpet, Hyderabad, India</p>
+            <p><i className="fas fa-map-marker-alt"></i> Kondapur, Hyderabad, India</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} NMS Solutions | All Rights Reserved</p>
+          <p>&copy; {new Date().getFullYear()} MNS Solutions | All Rights Reserved</p>
         </div>
       </footer>
     </div>

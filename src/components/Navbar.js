@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useState } from 'react';
 import {
   AppBar,
@@ -10,14 +9,14 @@ import {
   MenuItem
 } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
-// import Logo from '../images/logo.jpg';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isServicesPage = location.pathname === '/services';
 
-  // Dropdown anchor state
+  const isServicesPage = location.pathname === '/services';
+  const isHomePage = location.pathname === '/';
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -30,28 +29,19 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position='static' sx={{ backgroundColor: '#566573', margin: 0 }}>
+    <AppBar position='fixed' sx={{ backgroundColor: '#566573', zIndex: 1300 }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        {/* Logo */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#fff' }}>
             MNS <span style={{ color: '#e91e63' }}>Solutions</span>
           </Typography>
         </Box>
 
-        {/* Nav Buttons */}
         <Box>
           {isServicesPage ? (
             <>
               <Button color="inherit" onClick={() => navigate('/training')}>Trainings</Button>
-
-              {/* Dropdown button */}
-              <Button
-                color="inherit"
-                onClick={handleDropdownOpen}
-              >
-                Jobs ▼
-              </Button>
+              <Button color="inherit" onClick={handleDropdownOpen}>Jobs ▼</Button>
 
               <Menu
                 anchorEl={anchorEl}
@@ -70,9 +60,13 @@ const Navbar = () => {
               <Button color="inherit" onClick={() => navigate('/aboutus')}>AboutUs</Button>
               <Button color="inherit" onClick={() => navigate('/services')}>Services</Button>
               <Button color="inherit" onClick={() => navigate('/contact')}>Contact Us</Button>
-              <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
-              <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
-             
+
+              {!isHomePage && (
+                <>
+                  <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
+                  <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
+                </>
+              )}
             </>
           )}
         </Box>

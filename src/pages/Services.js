@@ -30,9 +30,9 @@ const Services = () => {
   );
 
   return (
-    <Box sx={{ bgcolor: '#1c1c28', minHeight: '100vh', color: '#fff', py: 6 }}>
+    <Box sx={{ bgcolor: '#1c1c28', minHeight: '100vh', color: '#fff', py: 6,}}>
       <Container>
-        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: '#fdf089' }}>
+        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: '#fdf089',marginTop:4 }}>
           All Our Services
         </Typography>
         <Typography variant="body1" mb={4} color='white'>

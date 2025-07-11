@@ -15,12 +15,19 @@ export default function Home() {
   return (
     <Box sx={{margin:'0px', backgroundSize:'cover',}}>
     <Box sx={{
+      minHeight: '100vh',
       backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      minHeight: '100vh',
-      color: '#fff',
-      marginBottom: '0px'
+      backgroundRepeat: 'no-repeat',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      marginTop:5,
+      marginBottom:0,
+      paddingBottom:0,
+      margin: 0,
+      padding: 0,
     }}>
       
       {/* Navbar */}
@@ -41,8 +48,8 @@ export default function Home() {
       </AppBar> */}
 
       {/* Hero Section */}
-      <Container sx={{ textAlign: 'center', pt: 15 }}>
-        <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
+      <Container sx={{ textAlign: 'center', pt: 15, backgroundColor:'transparent'}}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2, color:'white' }}>
           Make Your Dream Done With MNS Solutions 
           {/* Get The Best Free Online Courses */}
         </Typography>

@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 const AboutUs = () => {
   return (
     <Box>
-    <Container sx={{ mt: 5, mb: 5 }}>
+    <Container sx={{ mt: 10, mb: 5 }}>
       {/* Hero Section */}
       <Box
         sx={{
@@ -14,7 +14,7 @@ const AboutUs = () => {
           p: 4,
           color: 'white',
           textAlign: 'center',
-          mb: 5
+          mb: 5,
         }}
       >
         <Typography variant="h3" fontWeight="bold" gutterBottom>

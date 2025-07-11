@@ -133,7 +133,7 @@ export default function JobsMUI() {
   return (
     <Box sx={{bgcolor: '#f0f0f0', minHeight: '100vh', p: 4 }}>
       {/* Search Filters */}
-      <Grid container spacing={2} justifyContent="center" mb={4}  height="100px" paddingTop="20px">
+      <Grid container spacing={2} justifyContent="center" mb={4} mt={4} height="100px" paddingTop="20px">
         <Grid item>
           <Autocomplete
             options={jobRoles}
@@ -225,12 +225,12 @@ export default function JobsMUI() {
       </Grid> */}
 
       {/* Job Listings Header */}
-      <Typography variant="h5" align="center" gutterBottom>
+      {/* <Typography variant="h5" align="center" gutterBottom>
         Available Jobs
-      </Typography>
+      </Typography> */}
 
       {/* Job Cards */}
-      <Grid container direction="column" alignItems="center" spacing={3}>
+      <Grid container direction="column" alignItems="center" spacing={3} pb={3}>
         {jobsData.map((job, index) => (
           <Grid item key={index} xs={12} sx={{ width: '100%', maxWidth: 800 }}>
             <Card
@@ -297,7 +297,6 @@ export default function JobsMUI() {
           </Grid>
         ))}
       </Grid>
-
       <Footer />
     </Box>
   );

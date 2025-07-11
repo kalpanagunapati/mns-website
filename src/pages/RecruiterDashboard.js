@@ -55,7 +55,7 @@ const RecruiterDashboard = () => {
   return (
     <Box>
     <Container sx={{ mt: 4 }}>
-      <Grid container spacing={2} justifyContent="center" mb={4}  height="100px" paddingTop="20px">
+      <Grid container spacing={2} justifyContent="center" mb={4} mt={8} height="100px" paddingTop="20px">
         <Grid item>
           <Autocomplete
             options={jobRoles}
@@ -83,10 +83,10 @@ const RecruiterDashboard = () => {
           </Button>
         </Grid>
       </Grid>
-      <ResumeList/>
       <Typography variant="h4" gutterBottom>
         Recruiter Dashboard
       </Typography>
+      <ResumeList/>
 
       <JobPostForm onJobPost={handleJobPost} />
       <ApplicationList applications={applications} />
