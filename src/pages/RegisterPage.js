@@ -1,5 +1,3 @@
-// src/pages/Register.js
-
 import React, { Component } from 'react';
 import {
   Box,
@@ -8,11 +6,13 @@ import {
   TextField,
   Typography,
   Paper,
-  Link
+  Link,
+  withTheme
 } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import Footer from '../components/Footer/Footer';
 
-class Register extends Component {
+class RegisterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,12 +34,13 @@ class Register extends Component {
   };
 
   render() {
+    const { isSmallScreen } = this.props;
+
     return (
       <Box
         sx={{
           minHeight: '100vh',
-          backgroundImage:
-            "url(https://www.transparenttextures.com/patterns/stardust.png)", // transparent styled background
+          backgroundImage: "url(https://www.transparenttextures.com/patterns/stardust.png)",
           backgroundColor: "#0f2027",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -51,16 +52,17 @@ class Register extends Component {
         <Container
           maxWidth="sm"
           sx={{
-            mt: 10,
+            mt: isSmallScreen ? 6 : 10,
             mb: 4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            px: isSmallScreen ? 2 : 0
           }}
         >
           {/* Headings above the card */}
           <Typography
-            variant="h3"
+            variant={isSmallScreen ? 'h4' : 'h3'}
             align="center"
             sx={{
               fontWeight: 700,
@@ -78,17 +80,18 @@ class Register extends Component {
               color: 'white',
               mb: 4,
               fontWeight: 300,
+              fontSize: isSmallScreen ? '0.95rem' : '1rem',
               textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
             }}
           >
-            Lets get you started with your account
+            Let’s get you started with your account
           </Typography>
 
           {/* Card */}
           <Paper
             elevation={0}
             sx={{
-              p: 4,
+              p: isSmallScreen ? 3 : 4,
               borderRadius: '20px',
               width: '100%',
               background: 'rgba(255, 255, 255, 0.15)',
@@ -105,7 +108,6 @@ class Register extends Component {
                 fontWeight: 600,
                 color: '#0693E3',
                 mb: 3,
-                fontFamily: 'Poppins, sans-serif',
               }}
             >
               Create Your Account
@@ -123,7 +125,6 @@ class Register extends Component {
                 onChange={this.handleChange}
                 required
                 fullWidth
-                variant="outlined"
                 InputProps={{
                   style: { backgroundColor: '#fff', borderRadius: 10 },
                 }}
@@ -136,7 +137,6 @@ class Register extends Component {
                 onChange={this.handleChange}
                 required
                 fullWidth
-                variant="outlined"
                 InputProps={{
                   style: { backgroundColor: '#fff', borderRadius: 10 },
                 }}
@@ -149,7 +149,6 @@ class Register extends Component {
                 onChange={this.handleChange}
                 required
                 fullWidth
-                variant="outlined"
                 InputProps={{
                   style: { backgroundColor: '#fff', borderRadius: 10 },
                 }}
@@ -162,11 +161,11 @@ class Register extends Component {
                 onChange={this.handleChange}
                 required
                 fullWidth
-                variant="outlined"
                 InputProps={{
                   style: { backgroundColor: '#fff', borderRadius: 10 },
                 }}
               />
+
               <Button
                 type="submit"
                 variant="contained"
@@ -199,4 +198,10 @@ class Register extends Component {
   }
 }
 
-export default Register;
+// Wrapper functional component to use `useMediaQuery` in class component
+const ResponsiveRegister = () => {
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  return <RegisterForm isSmallScreen={isSmallScreen} />;
+};
+
+export default ResponsiveRegister;

@@ -131,31 +131,31 @@ export default function JobsMUI() {
   const jobRefs = useRef({});
 
   return (
-    <Box sx={{bgcolor: '#f0f0f0', minHeight: '100vh', p: 4 }}>
+    <Box sx={{bgcolor: '#f0f0f0', minHeight: '100vh', p: 4,px:{xs:2, sm:4}}}>
       {/* Search Filters */}
-      <Grid container spacing={2} justifyContent="center" mb={4} mt={4} height="100px" paddingTop="20px">
-        <Grid item>
+      <Grid container spacing={2} justifyContent="center" mb={6} mt={4} height="100px" paddingTop="20px" paddingLeft={0}>
+        <Grid item xs={12} sm={6} md={3}>
           <Autocomplete
             options={jobRoles}
             renderInput={(params) => <TextField {...params} label="Job Role" size="small" variant="outlined" />}
             sx={{ width: 200, backgroundColor: 'white' }}
           />
         </Grid>
-        <Grid item>
+        <Grid item xs={12} sm={6} md={3}>
           <Autocomplete
             options={indianCities}
             renderInput={(params) => <TextField {...params} label="City / Location" size="small" variant="outlined" />}
             sx={{ width: 200, backgroundColor: 'white' }}
           />
         </Grid>
-        <Grid item>
+        <Grid item xs={12} sm={6} md={3} paddingLeft={6}>
           <Autocomplete
             options={experienceLevels}
             renderInput={(params) => <TextField {...params} label="Experience" size="small" variant="outlined" />}
             sx={{ width: 200, backgroundColor: 'white' }}
           />
         </Grid>
-        <Grid item>
+        <Grid item xs={12} sm={6} md={3}>
           <Button variant="contained" color="primary" sx={{ height: '40px', minWidth: '40px', padding: 0 }}>
             <SearchIcon />
           </Button>
@@ -232,12 +232,18 @@ export default function JobsMUI() {
       {/* Job Cards */}
       <Grid container direction="column" alignItems="center" spacing={3} pb={3}>
         {jobsData.map((job, index) => (
-          <Grid item key={index} xs={12} sx={{ width: '100%', maxWidth: 800 }}>
+          <Grid item key={index} xs={12} sm={10} md={8} lg={6} sx={{ width: '100%', maxWidth: 800 }}>
             <Card
               ref={(el) => (jobRefs.current[job.title] = el)}
-              sx={{ p: 2, display: 'flex', justifyContent: 'space-between' }}
+              sx={{ p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2,
+                alignItems: 'flex-start',
+                mt:5,
+              }}
             >
-              <Box sx={{ flex: 1 }}>
+              <Box sx={{ flex: 1 ,}}>
                 <Typography variant="h6">{job.title}</Typography>
 
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
@@ -260,7 +266,7 @@ export default function JobsMUI() {
 
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                   <DescriptionIcon sx={{ fontSize: 18, mr: 1 }} />
-                  <Typography variant="body2">
+                  <Typography variant="body2" sx={{ fontSize: { xs: '0.8rem', sm: '1rem' } }}>
                     {job.description.length > 80
                       ? job.description.slice(0, 80) + '...'
                       : job.description}
@@ -282,7 +288,7 @@ export default function JobsMUI() {
                 </Typography>
               </Box>
 
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Box sx={{ display: 'flex', justifyContent:'space-between' }}>
                 <Avatar
                   src={job.logo}
                   alt="logo"
@@ -290,7 +296,7 @@ export default function JobsMUI() {
                   variant="rounded"
                 />
                 <IconButton>
-                  <BookmarkBorderIcon fontSize="small" />
+                  <BookmarkBorderIcon fontSize="small" color='action'/>
                 </IconButton>
               </Box>
             </Card>

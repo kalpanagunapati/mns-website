@@ -5,7 +5,6 @@ import {
   Grid,
   Card,
   CardContent,
-  // TextField,
   Container
 } from '@mui/material';
 import Footer from '../components/Footer/Footer';
@@ -30,36 +29,41 @@ const Services = () => {
   );
 
   return (
-    <Box sx={{ bgcolor: '#1c1c28', minHeight: '100vh', color: '#fff', py: 6,}}>
+    <Box sx={{ bgcolor: '#1c1c28', minHeight: '100vh', color: '#fff', py: 6 }}>
       <Container>
-        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: '#fdf089',marginTop:4 }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          gutterBottom
+          sx={{ color: '#fdf089', marginTop: 4, textAlign: 'center' }}
+        >
           All Our Services
         </Typography>
-        <Typography variant="body1" mb={4} color='white'>
+        <Typography
+          variant="body1"
+          mb={4}
+          color="white"
+          sx={{ textAlign: 'center', maxWidth: 700, mx: 'auto' }}
+        >
           MNS Solutions offers a wide range of services tailored for businesses, professionals, and students — helping them grow through technology.
         </Typography>
 
-        {/* Search Box */}
-        {/* <TextField
-          placeholder="Filter..."
-          variant="outlined"
-          fullWidth
-          sx={{
-            mb: 4,
-            input: { color: '#fff' },
-            fieldset: { borderColor: '#444' },
-            bgcolor: '#2a2a3d',
-            borderRadius: 3
-          }}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        /> */}
-
         {/* Service Cards */}
-        <Grid container spacing={3}>
+        <Grid container spacing={3} justifyContent="center">
           {filteredServices.map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card sx={{ bgcolor: '#2a2a3d', color: '#fff', height: '100%' ,width: '350px'}}>
+            <Grid item xs={12} sm={6} md={4} key={index} display="flex" justifyContent="center">
+              <Card
+                sx={{
+                  bgcolor: '#2a2a3d',
+                  color: '#fff',
+                  width: '100%',
+                  maxWidth: 350,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center'
+                }}
+              >
                 <CardContent>
                   <Typography variant="h6" fontWeight="bold" sx={{ color: '#fdf089' }}>
                     {service.title}
@@ -73,7 +77,7 @@ const Services = () => {
           ))}
         </Grid>
       </Container>
-      <Footer/>
+      <Footer />
     </Box>
   );
 };

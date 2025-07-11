@@ -1,31 +1,13 @@
 import React, { useState } from "react";
 import JobPostForm from "../components/JobPostForm";
 import ApplicationList from "../components/ApplicationList";
-import { Container, Typography } from "@mui/material";
-import {
-  Box,
-  // Card,
-  Grid,
-  TextField,
-  Button,
-  // Chip,
-  // Avatar,
-  // IconButton,
-} from '@mui/material';
-
-import Autocomplete from '@mui/material/Autocomplete';
-
-// import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-// import StarIcon from '@mui/icons-material/Star';
-// import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-// import LocationOnIcon from '@mui/icons-material/LocationOn';
-// import DescriptionIcon from '@mui/icons-material/Description';
-import SearchIcon from '@mui/icons-material/Search';
-
-import Footer from '../components/Footer/Footer';
+import { Container, Typography, Box, Grid, TextField, Button } from "@mui/material";
+import Autocomplete from "@mui/material/Autocomplete";
+import SearchIcon from "@mui/icons-material/Search";
+import Footer from "../components/Footer/Footer";
 import ResumeList from "../components/ResumesList/ResumesList";
 
-
+// Job options
 const jobRoles = [
   'Android Developer', 'iOS Developer', 'React Native Developer', 'Flutter Developer',
   'Software Engineer', 'Web Developer', 'Backend Developer', 'Data Scientist', 'AWS Developer',
@@ -35,12 +17,14 @@ const jobRoles = [
   'QA/Test Engineer', 'Digital Marketing'
 ];
 
+// Location options
 const indianCities = [
   'Ahmedabad', 'Bangalore', 'Chandigarh', 'Chennai', 'Coimbatore', 'Delhi', 'Hyderabad',
   'Kochi', 'Kolkata', 'Mumbai', 'Pune', 'Gurgaon', 'Jaipur', 'Lucknow', 'Noida', 'Navi Mumbai',
   'Trivandrum'
 ];
 
+// Experience options
 const experienceLevels = [
   'Fresher', '1 Year Experience', '2 Years Experience', '3+ Years Experience', '5+ Years Experience'
 ];
@@ -54,46 +38,91 @@ const RecruiterDashboard = () => {
 
   return (
     <Box>
-    <Container sx={{ mt: 4 }}>
-      <Grid container spacing={2} justifyContent="center" mb={4} mt={8} height="100px" paddingTop="20px">
-        <Grid item>
-          <Autocomplete
-            options={jobRoles}
-            renderInput={(params) => <TextField {...params} label="Job Role" size="small" variant="outlined" />}
-            sx={{ width: 200, backgroundColor: 'white' }}
-          />
-        </Grid>
-        <Grid item>
-          <Autocomplete
-            options={indianCities}
-            renderInput={(params) => <TextField {...params} label="City / Location" size="small" variant="outlined" />}
-            sx={{ width: 200, backgroundColor: 'white' }}
-          />
-        </Grid>
-        <Grid item>
-          <Autocomplete
-            options={experienceLevels}
-            renderInput={(params) => <TextField {...params} label="Experience" size="small" variant="outlined" />}
-            sx={{ width: 200, backgroundColor: 'white' }}
-          />
-        </Grid>
-        <Grid item>
-          <Button variant="contained" color="primary" sx={{ height: '40px', minWidth: '40px', padding: 0 }}>
-            <SearchIcon />
-          </Button>
-        </Grid>
-      </Grid>
-      <Typography variant="h4" gutterBottom>
-        Recruiter Dashboard
-      </Typography>
-      <ResumeList/>
+      <Container sx={{ mt: 4, mb: 4 }}>
+        {/* Filter Grid */}
+        <Grid
+          container
+          spacing={2}
+          justifyContent="center"
+          wrap="wrap"
+          mb={6}
+          sx={{
+            paddingY: 2,
+            backgroundColor: "#f8f8f8",
+            borderRadius: 2,
+          }}
+        >
+          {/* Job Role */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Autocomplete
+              options={jobRoles}
+              renderInput={(params) => <TextField {...params} label="Job Role" size="small" variant="outlined" />}
+              fullWidth
+              sx={{ backgroundColor: 'white' }}
+            />
+          </Grid>
 
-      <JobPostForm onJobPost={handleJobPost} />
-      <ApplicationList applications={applications} />
-    </Container>
-    <Footer/>
+          {/* City / Location */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Autocomplete
+              options={indianCities}
+              renderInput={(params) => <TextField {...params} label="City / Location" size="small" variant="outlined" />}
+              fullWidth
+              sx={{ backgroundColor: 'white' }}
+            />
+          </Grid>
+
+          {/* Experience */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Autocomplete
+              options={experienceLevels}
+              renderInput={(params) => <TextField {...params} label="Experience" size="small" variant="outlined" />}
+              fullWidth
+              sx={{ backgroundColor: 'white' }}
+            />
+          </Grid>
+
+          {/* Search Button */}
+          <Grid item xs={12} sm={6} md={1}>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{
+                height: '40px',
+                minWidth: '40px',
+                padding: 0,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <SearchIcon />
+            </Button>
+          </Grid>
+        </Grid>
+
+        {/* Heading */}
+        <Typography variant="h4" mt={4} mb={3} align="center">
+          Recruiter Dashboard
+        </Typography>
+        {/* Job Post Form */}
+        <Box mt={5}>
+          <JobPostForm onJobPost={handleJobPost} />
+        </Box>
+
+        {/* Resume List */}
+        <ResumeList />
+
+        {/* Application List */}
+        <Box mt={5}>
+          <ApplicationList applications={applications} />
+        </Box>
+      </Container>
+
+      {/* Footer */}
+      <Footer />
     </Box>
-    
   );
 };
 

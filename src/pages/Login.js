@@ -8,6 +8,8 @@ import {
   TextField,
   Typography,
   Link,
+  useTheme,
+  useMediaQuery
 } from "@mui/material";
 import Footer from "../components/Footer/Footer";
 
@@ -15,6 +17,8 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,8 +37,8 @@ const LoginPage = () => {
         sx={{
           minHeight: "100vh",
           backgroundImage:
-            "url(https://www.transparenttextures.com/patterns/stardust.png)", // transparent styled background
-          backgroundColor: "#0f2027", // dark overlay
+            "url(https://www.transparenttextures.com/patterns/stardust.png)",
+          backgroundColor: "#0f2027",
           backgroundBlendMode: "overlay",
           backgroundSize: "cover",
           display: "flex",
@@ -46,7 +50,7 @@ const LoginPage = () => {
       >
         <Container maxWidth="sm">
           <Typography
-            variant="h3"
+            variant={isSmall ? "h4" : "h3"}
             align="center"
             sx={{
               fontWeight: 600,
@@ -63,6 +67,7 @@ const LoginPage = () => {
             sx={{
               color: "#eaeaea",
               mb: 4,
+              fontSize: isSmall ? "0.95rem" : "1rem",
               textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
             }}
           >
@@ -72,7 +77,7 @@ const LoginPage = () => {
           <Paper
             elevation={0}
             sx={{
-              padding: 4,
+              padding: isSmall ? 3 : 4,
               borderRadius: 4,
               background: "rgba(255, 255, 255, 0.08)",
               boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
@@ -100,7 +105,7 @@ const LoginPage = () => {
                 required
                 InputProps={{
                   style: {
-                    backgroundColor: "rgba(255,255,255,0.9)",
+                    backgroundColor: "rgba(255,255,255,0.95)",
                     borderRadius: 8,
                   },
                 }}
@@ -115,7 +120,7 @@ const LoginPage = () => {
                 required
                 InputProps={{
                   style: {
-                    backgroundColor: "rgba(255,255,255,0.9)",
+                    backgroundColor: "rgba(255,255,255,0.95)",
                     borderRadius: 8,
                   },
                 }}
@@ -139,6 +144,7 @@ const LoginPage = () => {
               >
                 Sign In
               </Button>
+
               <Typography
                 variant="body2"
                 align="center"
