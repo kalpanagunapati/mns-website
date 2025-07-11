@@ -1,6 +1,6 @@
 
 import JobList from "../components/JobList"
-import { Container, Typography } from "@mui/material"
+import { Container } from "@mui/material"
 
 const JobApplicantDashboard = () => (
   <Container>
