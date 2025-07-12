@@ -240,7 +240,8 @@ export default function JobsMUI() {
                 flexDirection: 'column',
                 gap: 2,
                 alignItems: 'flex-start',
-                mt:5,
+                mt:4,
+                mb:0,
               }}
             >
               <Box sx={{ flex: 1 ,}}>

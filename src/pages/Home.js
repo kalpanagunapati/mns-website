@@ -13,10 +13,14 @@ import Footer from '../components/Footer/Footer';
 
 export default function Home() {
   return (
-    <Box sx={{margin:'0px', backgroundSize:'cover',}}>
+    <Box sx={{margin:'0px', backgroundSize:'cover',overflowX:'hidden',overflowY:'hidden'}}>
     <Box sx={{
       minHeight: '100vh',
-      backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40)',
+      position: 'relative',
+
+      backgroundImage: 'url("https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=1600&q=80")',
+
+      //backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -53,7 +57,7 @@ export default function Home() {
           Make Your Dream Done With MNS Solutions 
           {/* Get The Best Free Online Courses */}
         </Typography>
-        <Typography sx={{ maxWidth: 600, mx: 'auto', mb: 6, color:'black', fontSize:'26px'}}>
+        <Typography sx={{ maxWidth: 600, mx: 'auto', mb: 6, color:'white', fontSize:'26px'}}>
           your trusted partner for job opportunities and professional training.
           At MNS Solutions, we empower your future by connecting you with the right skills and the right jobs
         </Typography>

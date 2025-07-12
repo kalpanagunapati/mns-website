@@ -103,7 +103,7 @@ const RecruiterDashboard = () => {
         </Grid>
 
         {/* Heading */}
-        <Typography variant="h4" mt={4} mb={3} align="center">
+        <Typography variant="h4" mt={2} mb={0} align="center">
           Recruiter Dashboard
         </Typography>
         {/* Job Post Form */}

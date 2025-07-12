@@ -33,7 +33,7 @@ const Footer = () => {
           <Typography variant="h6" color="white" gutterBottom>
             About MNS
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body2" color="white">
             MNS SOLUTIONS is a premier software training institute in Hyderabad, dedicated to upskilling aspiring developers and professionals with cutting-edge technologies.
           </Typography>
         </Box>
@@ -44,9 +44,9 @@ const Footer = () => {
             Quick Links
           </Typography>
           <Stack spacing={1}>
-            <Link href="#" underline="hover" color="inherit">About Us</Link>
-            <Link href="#" underline="hover" color="inherit">Our Services</Link>
-            <Link href="#" underline="hover" color="inherit">Contact Us</Link>
+            <Link href="/aboutus" underline="hover" color="inherit">About Us</Link>
+            <Link href="/services" underline="hover" color="inherit">Our Services</Link>
+            <Link href="/contact" underline="hover" color="inherit">Contact Us</Link>
           </Stack>
         </Box>
 
@@ -58,17 +58,17 @@ const Footer = () => {
           <Stack spacing={1}>
             <Box display="flex" alignItems="center">
               <PhoneIcon sx={{ mr: 1 }} />
-              <Typography variant="body2">+91 6305427016</Typography>
+              <Typography variant="body2" color='white'>+91 6305427016</Typography>
             </Box>
             <Box display="flex" alignItems="center">
               <EmailIcon sx={{ mr: 1 }} />
-              <Link href="https://mnssolutionsgroup.com" color="inherit" underline="hover">
+              <Link href="https://mnssolutionsgroup.com" color="white" underline="hover">
                 mnssolutionsgroup.com
               </Link>
             </Box>
             <Box display="flex" alignItems="center">
               <LocationOnIcon sx={{ mr: 1 }} />
-              <Typography variant="body2">Kondapur, Hyderabad, India</Typography>
+              <Typography variant="body2" color='white'>Kondapur, Hyderabad, India</Typography>
             </Box>
           </Stack>
         </Box>
