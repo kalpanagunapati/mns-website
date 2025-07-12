@@ -12,14 +12,11 @@ import {
   List,
   ListItem,
   ListItemText,
-  Collapse,
   Divider,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -30,20 +27,40 @@ const Navbar = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [jobsOpen, setJobsOpen] = useState(false);
-
   const open = Boolean(anchorEl);
+
+  const isServicesPage = location.pathname === '/services';
+  const isHomePage = location.pathname === '/';
 
   const handleDropdownOpen = (event) => setAnchorEl(event.currentTarget);
   const handleDropdownClose = () => setAnchorEl(null);
+
   const toggleDrawer = (open) => () => setDrawerOpen(open);
 
   const handleNavigate = (path) => {
     navigate(path);
-    setDrawerOpen(false);
-    setAnchorEl(null);
-    setJobsOpen(false);
+    setDrawerOpen(false); // Close drawer on mobile
+    setAnchorEl(null); // Close dropdown if open
   };
+
+  // Navigation items
+  const mainLinks = [
+    { text: 'Home', path: '/' },
+    { text: 'About Us', path: '/aboutus' },
+    { text: 'Services', path: '/services' },
+    { text: 'Contact Us', path: '/contact' },
+  ];
+
+  const authLinks = [
+    { text: 'Register', path: '/register' },
+    { text: 'Login', path: '/login' },
+  ];
+
+  const serviceLinks = [
+    { text: 'Trainings', path: '/training' },
+    { text: 'Job Seeker', path: '/jobseeker' },
+    { text: 'Recruiter', path: '/recruiter' },
+  ];
 
   return (
     <>
@@ -63,51 +80,36 @@ const Navbar = () => {
                 <MenuIcon />
               </IconButton>
               <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
-                <Box sx={{ width: 250 }} role="presentation">
+                <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
                   <List>
-                    {location.pathname === '/services' ? (
+                    {/* Main links always shown */}
+                    {mainLinks.map((item) => (
+                      <ListItem button key={item.text} onClick={() => handleNavigate(item.path)}>
+                        <ListItemText primary={item.text} />
+                      </ListItem>
+                    ))}
+
+                    {/* If on services page, show extra service sub-links */}
+                    {isServicesPage && (
                       <>
-                        {/* Show only Trainings and Jobs */}
-                        <ListItem button onClick={() => handleNavigate('/training')}>
-                          <ListItemText primary="Trainings" />
-                        </ListItem>
-                        <ListItem button onClick={() => setJobsOpen(!jobsOpen)}>
-                          <ListItemText primary="Jobs" />
-                          {jobsOpen ? <ExpandLess /> : <ExpandMore />}
-                        </ListItem>
-                        <Collapse in={jobsOpen} timeout="auto" unmountOnExit>
-                          <List component="div" disablePadding>
-                            <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigate('/jobseeker')}>
-                              <ListItemText primary="Job Seeker" />
-                            </ListItem>
-                            <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigate('/recruiter')}>
-                              <ListItemText primary="Recruiter" />
-                            </ListItem>
-                          </List>
-                        </Collapse>
-                      </>
-                    ) : (
-                      <>
-                        {/* Default full menu */}
-                        <ListItem button onClick={() => handleNavigate('/')}>
-                          <ListItemText primary="Home" />
-                        </ListItem>
-                        <ListItem button onClick={() => handleNavigate('/aboutus')}>
-                          <ListItemText primary="About Us" />
-                        </ListItem>
-                        <ListItem button onClick={() => handleNavigate('/services')}>
-                          <ListItemText primary="Services" />
-                        </ListItem>
-                        <ListItem button onClick={() => handleNavigate('/contact')}>
-                          <ListItemText primary="Contact Us" />
-                        </ListItem>
                         <Divider />
-                        <ListItem button onClick={() => handleNavigate('/register')}>
-                          <ListItemText primary="Register" />
-                        </ListItem>
-                        <ListItem button onClick={() => handleNavigate('/login')}>
-                          <ListItemText primary="Login" />
-                        </ListItem>
+                        {serviceLinks.map((item) => (
+                          <ListItem button key={item.text} onClick={() => handleNavigate(item.path)}>
+                            <ListItemText primary={item.text} />
+                          </ListItem>
+                        ))}
+                      </>
+                    )}
+
+                    {/* Auth links for non-home pages */}
+                    {!isHomePage && (
+                      <>
+                        <Divider />
+                        {authLinks.map((item) => (
+                          <ListItem button key={item.text} onClick={() => handleNavigate(item.path)}>
+                            <ListItemText primary={item.text} />
+                          </ListItem>
+                        ))}
                       </>
                     )}
                   </List>
@@ -116,7 +118,7 @@ const Navbar = () => {
             </>
           ) : (
             <Box>
-              {location.pathname === '/services' ? (
+              {isServicesPage ? (
                 <>
                   <Button color="inherit" onClick={() => navigate('/training')}>Trainings</Button>
                   <Button color="inherit" onClick={handleDropdownOpen}>Jobs ▼</Button>
@@ -133,19 +135,24 @@ const Navbar = () => {
                 </>
               ) : (
                 <>
-                  <Button color="inherit" onClick={() => navigate('/')}>Home</Button>
-                  <Button color="inherit" onClick={() => navigate('/aboutus')}>About Us</Button>
-                  <Button color="inherit" onClick={() => navigate('/services')}>Services</Button>
-                  <Button color="inherit" onClick={() => navigate('/contact')}>Contact Us</Button>
-                  <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
-                  <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
+                  {mainLinks.map((item) => (
+                    <Button key={item.text} color="inherit" onClick={() => navigate(item.path)}>
+                      {item.text}
+                    </Button>
+                  ))}
+                  {!isHomePage &&
+                    authLinks.map((item) => (
+                      <Button key={item.text} color="inherit" onClick={() => navigate(item.path)}>
+                        {item.text}
+                      </Button>
+                    ))}
                 </>
               )}
             </Box>
           )}
         </Toolbar>
       </AppBar>
-      <Toolbar />
+      <Toolbar /> {/* Spacer for fixed AppBar */}
     </>
   );
 };
